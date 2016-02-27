@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <title>Hermes</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <meta charset='UTF-8'>
+    <title>Hermes - Voice your Lyft</title>
+    <link rel='stylesheet' href='css/bootstrap.min.css'>
+    <link rel='stylesheet' href='css/stylesheet.css'>
 </head>
 <body>
-    <div class="container">
-        <h1>Hermes <small>for Lyft</small></h1>
-        <p>Hello, World!</p>
-        <a href='${authorization_url}' class="btn btn-primary">Connect with Lyft</a>
+<div class='jumbotron'>
+    <div class='container'>
+        <a href='/'>
+            <h1>Hermes <small>for Lyft</small></h1>
+        </a>
     </div>
+</div>
+<div class='container'>
+    <div class="row" id="circle_button">
+        <div class="span3">
+            <a href='eta'>Get Pickup ETA</a>
+        </div>
+        <div class="span3">
+            <a href='${authorization_url}'>Request a Lyft</a>
+        </div>
+        <div class="span3">
+            <a href='/'>Get cost estimate</a>
+        </div>
+    </div>
+</div>
 </body>
 </html>

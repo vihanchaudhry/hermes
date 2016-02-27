@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hermes - Pickup ETA</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel='stylesheet' href='../css/stylesheet.css'>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <a href='/'>
+            <h1>Hermes <small>for Lyft</small></h1>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <h3 id="eta_address">Pickup Address: ${location_address}</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>Lyft Line</p>
+        </div>
+        <div class="col-md-4">
+            <p>${lyft_line_eta} seconds</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>Lyft</p>
+        </div>
+        <div class="col-md-4">
+            <p>${lyft_eta} seconds</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <p>Lyft Plus</p>
+        </div>
+        <div class="col-md-4">
+            <p>${lyft_plus_eta} seconds</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

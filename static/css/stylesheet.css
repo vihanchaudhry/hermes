@@ -1,0 +1,59 @@
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+.jumbotron {
+    background-color: #F3F3F5;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}
+
+.jumbotron .container {
+    align-items: center;
+    display: flex;
+    height: 512px;
+}
+
+h1 {
+    font-family: Gotham Book;
+}
+
+h1 small {
+    color: #FF00BF;
+}
+
+#eta_address {
+    font-family: Gotham Light;
+    color: #352384;
+}
+
+.row .span3 {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    vertical-align: center;
+    position: relative;
+    border-radius: 100px;
+    border: 2px solid #FF00BF;
+}
+
+.row .span3:hover {
+    background-color: #F3F3F5;
+}
+
+#circle_button {
+    padding: 2px;
+}
