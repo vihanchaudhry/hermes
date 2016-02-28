@@ -31,12 +31,23 @@ def get_user_token(authorization_code):
     return requests.post('https://api.lyft.com/oauth/token', auth=client_auth, data=post_data)
 
 
-def get_eta(token, locations):
+def get_eta(token, location):
     return requests.get('https://api.lyft.com/v1/eta', headers={
         'Authorization': 'Bearer ' + token.json()['access_token']
     }, params={
-        'lat': locations.json()['locations'][0]['feature']['geometry']['y'],
-        'lng': locations.json()['locations'][0]['feature']['geometry']['x']
+        'lat': location.json()['locations'][0]['feature']['geometry']['y'],
+        'lng': location.json()['locations'][0]['feature']['geometry']['x']
+    })
+
+
+def get_cost(token, pickup_location, destination):
+    return requests.get('https://api.lyft.com/v1/cost', headers={
+        'Authorization': 'Bearer ' + token.json()['access_token']
+    }, params={
+        'start_lat': pickup_location.json()['locations'][0]['feature']['geometry']['y'],
+        'start_lng': pickup_location.json()['locations'][0]['feature']['geometry']['x'],
+        'end_lat': destination.json()['locations'][0]['feature']['geometry']['y'],
+        'end_lng': destination.json()['locations'][0]['feature']['geometry']['x']
     })
 
 

@@ -4,9 +4,9 @@
 var client_access_token = '5d89bf4493e7452d87caa4a29fae5d2d'
 console.log("BLAH");
 
-function getJSessionId(){
+function getJSessionId() {
     var jsId = document.cookie.match(/JSESSIONID=[^;]+/);
-    if(jsId != null) {
+    if (jsId != null) {
         if (jsId instanceof Array)
             jsId = jsId[0].substring(11);
         else

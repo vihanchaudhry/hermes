@@ -16,28 +16,25 @@ a:active {
 }
 
 .jumbotron {
-  display: flex;
+    display: flex;
 
-  color: #000000;
-  height: 100px;
-  text-shadow: 0.25px 0.25px 0.25px #000000;
+    color: #000000;
+    height: 100px;
+    text-shadow: 0.25px 0.25px 0.25px #000000;
     font: cursive;
 }
-
 
 .jumbotron h1 {
     align-items: center;
     font-family: Gotham Book;
     font-size: 100px;
-    color: #00008B;         /* blue */
-     border: 20px solid black;
-
-
+    color: #00008B; /* blue */
+    border: 20px solid black;
 
 }
 
 .jumbotron h1 small {
-    color: #FF69B4;         /*hot pink */
+    color: #FF69B4; /*hot pink */
     align-items: center;
 }
 

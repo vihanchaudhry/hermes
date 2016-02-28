@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hermes - Request a Lyft</title>
+    <title>Hermes - Cost Estimate Request</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel='stylesheet' href='../css/stylesheet.css'>
 </head>
@@ -17,7 +17,7 @@
             </a>
         </div>
     </div>
-    <form action="/request/" method="POST" id="ride_info">
+    <form action="/cost/" method="POST" id="cost_info">
         <div class="row">
             <p class="col-md-4">Pickup Location</p>
             <p class="col-md-4">
@@ -31,18 +31,8 @@
             </p>
         </div>
         <div class="row">
-            <p class="col-md-4">Ride Type</p>
             <p class="col-md-4">
-                <select name="ride_type" form="ride_info">
-                    <option value="line">Lyft Line (2 people max)</option>
-                    <option value="lyft">Lyft (4 people max)</option>
-                    <option value="plus">Lyft Plus (6 people max)</option>
-                </select>
-            </p>
-        </div>
-        <div class="row">
-            <p class="col-md-4">
-                <input type="submit" name="Request a Lyft">
+                <input type="submit" name="Get cost estimate">
             </p>
         </div>
     </form>

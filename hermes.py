@@ -1,6 +1,6 @@
+from run import app
 from utils import geo
 from utils import lyft
-from run import app
 
 # get ArcGIS API token
 arcgis_token = geo.get_token()

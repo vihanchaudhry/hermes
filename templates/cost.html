@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hermes - Cost Estimate</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel='stylesheet' href='../css/stylesheet.css'>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <a href='/'>
+                <h1>Hermes
+                    <small>for Lyft</small>
+                </h1>
+            </a>
+        </div>
+    </div>
+    <div class="row">
+        <h3 id="eta_address">Pickup Address: ${pickup_location}</h3>
+    </div>
+    <div class="row">
+        <h3 id="eta_address">Destination: ${destination}</h3>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Lyft Line (2 people max)</p>
+        </div>
+        <div class="col-md-2">
+            <p>Primetime: ${lyft_line_percentage}</p>
+        </div>
+        <div class="col-md-3">
+            <p>Estimated Cost: $${lyft_line_cost_min}-$${lyft_line_cost_max}</p>
+        </div>
+        <div class="col-md-2">
+            <p>Distance: ${lyft_line_distance} miles</p>
+        </div>
+        <div class="col-md-2">
+            <p>Duration: ${lyft_line_duration} mins</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Lyft (4 people max)</p>
+        </div>
+        <div class="col-md-2">
+            <p>Primetime: ${lyft_percentage}</p>
+        </div>
+        <div class="col-md-3">
+            <p>Estimated Cost: $${lyft_cost_min}-$${lyft_cost_max}</p>
+        </div>
+        <div class="col-md-2">
+            <p>Distance: ${lyft_distance} miles</p>
+        </div>
+        <div class="col-md-2">
+            <p>Duration: ${lyft_duration} mins</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <p>Lyft Plus (6 people max)</p>
+        </div>
+        <div class="col-md-2">
+            <p>Primetime: ${lyft_plus_percentage}</p>
+        </div>
+        <div class="col-md-3">
+            <p>Estimated Cost: $${lyft_plus_cost_min}-$${lyft_plus_cost_max}</p>
+        </div>
+        <div class="col-md-2">
+            <p>Distance: ${lyft_plus_distance} miles</p>
+        </div>
+        <div class="col-md-2">
+            <p>Duration: ${lyft_plus_duration} mins</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
