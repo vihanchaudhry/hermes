@@ -53,9 +53,9 @@ def get_cost(token, pickup_location, destination):
 
 def request_ride(token, pickup, destination, ride_type):
     parameters = {
+        'ride_type': ride_type,
         'origin': pickup,
         'destination': destination,
-        'ride_type': ride_type
     }
     print parameters
     return requests.post('https://api.lyft.com/v1/rides', headers={
