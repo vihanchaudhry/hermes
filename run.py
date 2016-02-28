@@ -19,18 +19,30 @@ def get_auth_url():
     return template.render(**parameters)
 
 
-@app.route('/success/')
+@app.route('/ride/')
 def auth_success():
-    template = Template(filename='templates/index.html')
-    user_token = lyft.get_user_token(request.args['code'])
-    print user_token.json()
+    template = Template(filename='templates/ride.html')
     return template.render()
+
+
+@app.route('/request/', methods=['POST'])
+def ride_request():
+    template = Template(filename='templates/request.html')
+    locations = request.form
+    arcgis_token = geo.get_token()
+    pickup_location = geo.geocode(arcgis_token, locations['pickup_location'])
+    destination = geo.geocode(arcgis_token, locations['destination'])
+    ride_type = locations['ride_type']
+    lyft_user_token = lyft.get_user_token(request.args['code'])
+    parameters = {
+
+    }
+    return template.render(**parameters)
 
 
 @app.route('/eta/')
 def get_eta():
     template = Template(filename='templates/eta.html')
-
     arcgis_token = geo.get_token()
     locations = geo.geocode(arcgis_token, "Empire State Building")
     lyft_public_token = lyft.get_public_token()

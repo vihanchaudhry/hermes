@@ -38,3 +38,13 @@ def get_eta(token, locations):
         'lat': locations.json()['locations'][0]['feature']['geometry']['y'],
         'lng': locations.json()['locations'][0]['feature']['geometry']['x']
     })
+
+
+def request_ride(token, pickup, destination, ride_type):
+    return requests.post('https://api.lyft.com/v1/rides', headers={
+        'Authorization': 'Bearer ' + token.json()['access_token']
+    }, params={
+        'origin': pickup.json(),
+        'destination': destination.json(),
+        'ride_type': ride_type
+    })
