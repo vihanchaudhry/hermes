@@ -15,7 +15,7 @@
             </a>
         </div>
     </div>
-    <form action="/request/" method="post">
+    <form action="/request/" method="POST" id="ride_info">
         <div class="row">
             <p class="col-md-4">Pickup Location</p>
             <p class="col-md-4">
@@ -31,7 +31,7 @@
         <div class="row">
             <p class="col-md-4">Ride Type</p>
             <p class="col-md-4">
-                <select name="Ride Type" name="ride_type">
+                <select name="ride_type" form="ride_info">
                     <option value="line">Lyft Line (2 people max)</option>
                     <option value="lyft">Lyft (4 people max)</option>
                     <option value="plus">Lyft Plus (6 people max)</option>
