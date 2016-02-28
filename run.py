@@ -47,17 +47,24 @@ def ride_request():
     return template.render()
 
 
-@app.route('/eta/')
+@app.route('/eta/', methods=['POST'])
 def get_eta():
     template = Template(filename='templates/eta.html')
+    location = request.form
     arcgis_token = geo.get_token()
-    locations = geo.geocode(arcgis_token, "Empire State Building")
+    pickup_location = geo.geocode(arcgis_token, location.getlist('pickup_location')[0])
     lyft_public_token = lyft.get_public_token()
-    eta = lyft.get_eta(lyft_public_token, locations).json()
+    eta = lyft.get_eta(lyft_public_token, pickup_location).json()
     parameters = {
-        'location_address': locations.json()['locations'][0]['name'],
+        'location_address': pickup_location.json()['locations'][0]['name'],
         'lyft_line_eta': eta['eta_estimates'][0]['eta_seconds'],
         'lyft_eta': eta['eta_estimates'][1]['eta_seconds'],
         'lyft_plus_eta': eta['eta_estimates'][2]['eta_seconds']
     }
     return template.render(**parameters)
+
+
+@app.route('/etarequest/')
+def get_eta_location():
+    template = Template(filename='templates/etarequest.html')
+    return template.render()

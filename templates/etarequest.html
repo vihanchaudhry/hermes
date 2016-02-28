@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hermes - Pickup ETA Request</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel='stylesheet' href='../css/stylesheet.css'>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="page-header">
+            <a href='/'>
+            <h1>Hermes <small>for Lyft</small></h1>
+            </a>
+        </div>
+    </div>
+     <form action="/eta/" method="POST" id="eta_info">
+        <div class="row">
+            <p class="col-md-4">Pickup Location</p>
+            <p class="col-md-4">
+                <input type="text" name="pickup_location">
+            </p>
+        </div>
+        <div class="row">
+            <p class="col-md-4">
+                <input type="submit" name="Get pickup ETA">
+            </p>
+        </div>
+    </form>
+</div>
+</body>
+</html>
