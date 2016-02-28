@@ -1,3 +1,3 @@
 # hermes
 
-Voice commands for Lyft
+Web client for Lyft
