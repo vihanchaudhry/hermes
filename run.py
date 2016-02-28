@@ -2,7 +2,7 @@ import mako.runtime
 from flask import Flask
 from flask import request
 from mako.template import Template
-
+import json
 from utils import geo
 from utils import lyft
 
@@ -25,7 +25,7 @@ def auth_success():
     template = Template(filename='templates/ride.html')
     lyft_user_token = lyft.get_user_token(request.args['code'])
     parameters = {
-        'user_token': lyft_user_token
+        'user_token': lyft_user_token.json()['access_token']
     }
     return template.render(**parameters)
 
@@ -37,11 +37,20 @@ def ride_request():
     arcgis_token = geo.get_token()
     pickup_location = geo.geocode(arcgis_token, locations.getlist('pickup_location')[0])
     destination = geo.geocode(arcgis_token, locations.getlist('destination')[0])
+    orig_dict = {
+        'lat': pickup_location.json()['locations'][0]['feature']['geometry']['y'],
+        'lng': pickup_location.json()['locations'][0]['feature']['geometry']['x'],
+        'address': pickup_location.json()['locations'][0]['name']
+    }
+    dest_dict = {
+        'lat': destination.json()['locations'][0]['feature']['geometry']['y'],
+        'lng': destination.json()['locations'][0]['feature']['geometry']['x'],
+        'address': destination.json()['locations'][0]['name']
+    }
     ride_type = locations.getlist('ride_type')[0]
-    print pickup_location.json(), destination.json(), ride_type
-    # lyft_user_token = lyft.get_user_token(request.args['code'])
-    # ride = lyft.request_ride(lyft_user_token, pickup_location.json(), destination.json(), ride_type)
-    # print ride.json()
+    lyft_user_token = locations.getlist('user_token')[0]
+    ride = lyft.request_ride(lyft_user_token, orig_dict, dest_dict, ride_type)
+    print ride.json()
     parameters = {
 
     }
