@@ -20,32 +20,46 @@
 
 <section class='jumbotron'>
     <div class="row text-center">
-        <h1>Hermes</h1>
-        <h1>Powered by
-            <small> Lyft</small>
-        </h1>
-
+        <a href="/">
+            <h1>Hermes</h1>
+            <small>
+                Powered by
+                <h1>Lyft</h1>
+            </small>
+        </a>
     </div>
-
 </section>
 <div class='container'>
     <div class="row" id="circle_button">
         <div class="col-sm-4">
-            <div class="span3">
-                <a href='etarequest'>Get pickup ETA</a>
-            </div>
+            <a href='etarequest'>
+                <div class="span3">
+                    <p>Get pickup ETA</p>
+                </div>
+            </a>
         </div>
         <div class="col-sm-4">
-            <div class="span3">
-                <a href='${authorization_url}'>Request a Lyft</a>
-            </div>
+            <a href='${authorization_url}'>
+                <div class="span3">
+                    <p>Request a Lyft</p>
+                </div>
+            </a>
         </div>
         <div class="col-sm-4">
-            <div class="span3">
-                <a href='costrequest'>Get cost estimate</a>
-            </div>
+            <a href='costrequest'>
+                <div class="span3">
+                    <p>Get cost estimate</p>
+                </div>
+            </a>
         </div>
     </div>
+</div>
+<div class="navbar navbar-fixed-bottom">
+    <footer class="footer">
+        <a href="https://www.lyft.com/">
+            <img src="lyft_64px.png">
+        </a>
+    </footer>
 </div>
 </body>
 </html>

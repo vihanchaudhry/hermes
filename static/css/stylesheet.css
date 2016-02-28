@@ -1,3 +1,7 @@
+* {
+    font-family: Gotham Book, Gotham Bold, Gotham Light;
+    color: #333447;
+}
 
 a:link {
     text-decoration: none;
@@ -16,30 +20,36 @@ a:active {
 }
 
 .jumbotron {
-    display: flex;
-
-    color: #000000;
-    height: 100px;
+    color: #F3F3F5;
+    font-family: Gotham Book;
+    height: 512px;
     text-shadow: 0.25px 0.25px 0.25px #000000;
-    font: cursive;
+    text-align: center;
 }
 
 .jumbotron h1 {
     align-items: center;
-    font-family: Gotham Book;
     font-size: 100px;
-    color: #00008B; /* blue */
-    border: 20px solid black;
-
+    color: #352384; /* blue */
 }
 
-.jumbotron h1 small {
+.jumbotron small {
+    color: #FF69B4;
+    font-size: 64px;
+    color: #333447;
+}
+
+.jumbotron small h1 {
     color: #FF69B4; /*hot pink */
     align-items: center;
 }
 
-container {
-    font-size: 100px;
+small {
+    color: #FF69B4;
+}
+
+.container {
+    font-size: 24px;
     color: deepskyblue;
     text-align: center;
 
@@ -64,7 +74,18 @@ container {
     background-color: #F3F3F5;
 }
 
+.span3 p {
+    font-famly: Gothic Bold;
+    line-height: 185px;
+}
+
+.footer {
+    font-family: Gotham Light;
+    color: #F3F3F5;
+    background-color: #333447;
+}
+
 #circle_button {
-    padding: 2px;
-    color: pink;
+    padding-left: 120px;
+    color: hotpink;
 }
