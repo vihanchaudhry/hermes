@@ -1,4 +1,5 @@
 import requests
+import json
 
 CLIENT_ID = 'bUgtHRd559o-'
 CLIENT_SECRET = 'SANDBOX-I7jkXvidJiL4ruPmtHuT4JMlINe1gII1'
@@ -61,4 +62,4 @@ def request_ride(token, pickup, destination, ride_type):
     return requests.post('https://api.lyft.com/v1/rides', headers={
         'Authorization': 'Bearer ' + token,
         'Content-Type': 'application/json'
-    }, data=parameters)
+    }, data=json.dumps(parameters))
